@@ -575,7 +575,8 @@ function Gallery() {
   const [showMore, setShowMore] = useState(false);
 
   function handleNextClick() {
-    setIndex(index + 1);
+    // prevent index from exceeding the length of the sculpture list
+    setIndex((index + 1) % sculptureList.length);
   }
 
   function handleMoreClick() {
